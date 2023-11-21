@@ -9,7 +9,7 @@
 <h1>Estudiantes</h1>
 
 <p>
-    <button type="button" class="btn btn-primary"><a class="Links" asp-action="Create" >Crear un nuevo estudiante</a></button>
+    <button type="button" class="btn btn-primary"><a class="LinksA" asp-action="Create" >Nuevo estudiante</a></button>
 </p>
 <div class="row">
     <form method="get" asp-action="Index" asp-controller="Estudiante">
@@ -48,8 +48,8 @@
                 @Html.DisplayFor(modelItem => item.Dni)
             </td>
             <td>
-                <button type="button" class="btn btn-secondary"><a asp-action="Edit" asp-route-id="@item.Id">Editar</a></button> 
                 <button type="button" class="btn btn-info"><a asp-action="Details" asp-route-id="@item.Id">Detalles</a></button>
+                <button type="button" class="btn btn-secondary"><a asp-action="Edit" asp-route-id="@item.Id">Editar</a></button> 
                 <button type="button" class="btn btn-danger"><a asp-action="Delete" asp-route-id="@item.Id">Eliminar</a></button>
             </td>
         </tr>
