@@ -1,0 +1,66 @@
+@using Parcial1.ViewModels;
+
+@model CursoViewModel;
+
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Cursos</h1>
+<br>
+<p>
+    <button type="button" class="btn btn-primary"><a class="Links" asp-action="Create" >Crear un nuevo curso</a></button>
+</p>
+<div class="row">
+    <form method="get" asp-action="Index" asp-controller="Curso">
+        <div>
+            <input class="form-control" asp-for="NameFilter">
+        </div>
+        <button class="btn" type="submit">Buscar</button>
+    </form>
+</div>
+<br>
+<br>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Cursos[0].Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cursos[0].Duracion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cursos[0].Precio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cursos[0].Capacidad)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Cursos) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Duracion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Precio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Capacidad)
+            </td>
+            <td>
+                <button type="button" class="btn btn-secondary"><a asp-action="Edit" asp-route-id="@item.Id">Editar</a></button> 
+                <button type="button" class="btn btn-info"><a asp-action="Details" asp-route-id="@item.Id">Detalles</a></button>
+                <button type="button" class="btn btn-danger"><a asp-action="Delete" asp-route-id="@item.Id">Eliminar</a></button>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
