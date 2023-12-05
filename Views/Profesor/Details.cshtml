@@ -1,0 +1,37 @@
+@model Parcial1.Models.Profesor
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalles</h1>
+
+<div>
+    <h4>Estudiante</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NombreProfesor)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NombreProfesor)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ApellidoProfesor)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ApellidoProfesor)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Dni)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Dni)
+        </dd>
+    </dl>
+</div>
+<div>
+    <button type="button" class="btn btn-secondary"><a asp-action="Edit" asp-route-id="@Model?.Id">Editar</a></button>
+    <button type="button" class="btn btn-dark"><a class="LinksA" asp-action="Index">Volver a la lista</a></button>
+</div>
+

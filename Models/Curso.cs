@@ -1,4 +1,5 @@
 namespace Parcial1.Models;
+
 public class Curso
 {
     public int Id { get; set; }
@@ -6,6 +7,7 @@ public class Curso
     public string Duracion { get; set; }
     public double Precio { get; set; }
     public int Capacidad { get; set; }
-    public virtual List<Estudiante>? Estudiantes { get; set;}
 
+    public Profesor Profesor { get; set; }
+    public virtual List<Estudiante>? Estudiantes { get; set; }
 }
