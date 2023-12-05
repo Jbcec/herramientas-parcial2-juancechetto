@@ -1,14 +1,15 @@
 @using Microsoft.AspNetCore.Identity
-@model List<IdentityUser> 
+@model List<IdentityUser>
 
 <h3>Users</h3>
 
 <ul>
-@foreach (var item in Model)
-{
-    <li>
-        @item.UserName | <button type="button" class="btn btn-secondary"><a asp-action="Edit" asp-route-id="@item.Id">Asignar Rol</a></button>   
-    </li>
-    <br>
-}
+    @foreach (var item in Model)
+    {
+        <li style="display: flex; align-items: baseline;">
+            <p style="width:20%">@item.UserName</p> <button type="button" class="btn btn-secondary"><a asp-action="Edit"
+                    asp-route-id="@item.Id">Asignar Rol</a></button>
+        </li>
+        <br>
+    }
 </ul>

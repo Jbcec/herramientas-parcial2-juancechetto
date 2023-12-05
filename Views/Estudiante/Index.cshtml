@@ -7,16 +7,15 @@
 }
 
 <h1>Estudiantes</h1>
-
-<p>
-    <button type="button" class="btn btn-primary"><a class="LinksA" asp-action="Create" >Nuevo estudiante</a></button>
-</p>
+<br>
 <div class="row">
     <form method="get" asp-action="Index" asp-controller="Estudiante">
         <div>
             <input class="form-control" asp-for="NameFilter">
         </div>
-        <button class="btn" type="submit">Buscar</button>
+        <button type="button" class="btn btn-primary"  style="margin-top:1em"><a class="LinksA" asp-action="Create" >Nuevo estudiante</a></button>
+        <button class="btn btn-secondary" style="margin-top:1em; border: 1px solid black"  type="submit">Buscar</button>
+        <button type="button" class="btn btn-dark" style="margin-top:1em"><a class="LinksA" asp-action="Index">Volver a la lista</a></button>
     </form>
 </div> 
 <br>
@@ -33,6 +32,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Estudiantes[0].Dni)
             </th>
+             <th></th>
         </tr>
     </thead>
     <tbody>
@@ -47,7 +47,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Dni)
             </td>
-            <td>
+            <td style="float: inline-end;">
                 <button type="button" class="btn btn-info"><a asp-action="Details" asp-route-id="@item.Id">Detalles</a></button>
                 <button type="button" class="btn btn-secondary"><a asp-action="Edit" asp-route-id="@item.Id">Editar</a></button> 
                 <button type="button" class="btn btn-danger"><a asp-action="Delete" asp-route-id="@item.Id">Eliminar</a></button>

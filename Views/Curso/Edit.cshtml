@@ -33,16 +33,14 @@
                 <input asp-for="Capacidad" class="form-control" />
                 <span asp-validation-for="Capacidad" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="margin-top:1em;">
                 <input type="submit" value="Save" class="btn btn-primary" />
+                <button type="button" class="btn btn-dark"><a class="LinksA" asp-action="Index">Volver a la lista</a></button>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <button type="button" class="btn btn-dark"><a class="LinksA" asp-action="Index">Volver a la lista</a></button>
-</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
