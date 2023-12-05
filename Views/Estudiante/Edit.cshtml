@@ -35,7 +35,7 @@
                     @for (int i = 0; i < Model.Cursos.Count; i++)
                     {
                         <input type="hidden" asp-for="Cursos[i].Id" />
-                        <input asp-for="Cursos[i].Nombre" class="form-control" />
+                        <input disabled asp-for="Cursos[i].Nombre" class="form-control" />
                         <span asp-validation-for="Cursos[i].Nombre" class="text-danger"></span>
                     }
                 </div>

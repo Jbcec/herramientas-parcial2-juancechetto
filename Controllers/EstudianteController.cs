@@ -51,7 +51,7 @@ namespace Parcial1.Controllers
         }
 
         // GET: Estudiante/Create
-        [Authorize(Roles = "Estudiante")]
+        [Authorize(Roles = "Administrador")]
         public IActionResult Create()
         {
             var cursosList  = _cursoServices.GetAll();
@@ -103,7 +103,7 @@ namespace Parcial1.Controllers
 
 
         // GET: Estudiante/Edit/5
-        [Authorize(Roles = "Administrador, Estudiante")]
+        [Authorize(Roles = "Administrador, Profesor")]
         public IActionResult Edit(int? id)
         {
             if (id == null)

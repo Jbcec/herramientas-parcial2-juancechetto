@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Create";
+
     SelectList cursoList = (SelectList)ViewData["Cursos"];
 }
 
@@ -31,8 +32,8 @@
             <div class="form-group">
                 <label asp-for="CursoElegido" class="control-label"></label>
             </div>
-            
-            <select class="form-control w-50 dropdown" multiple asp-for="CursoIds" asp-items="cursoList" placeholder="Seleccione cursos">
+            <select class="form-control w-50 dropdown" multiple asp-for="CursoIds" asp-items="cursoList"
+                placeholder="Seleccione cursos">
             </select>
 
 
@@ -45,9 +46,11 @@
 
 <div>
     <button type="button" class="btn btn-dark"><a class="LinksA" asp-action="Index">Volver a la lista</a></button>
-    
+
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
